@@ -45,10 +45,15 @@ public static void main (String [] args) { //creating main method
 		
 	}
 	
+	if (lengthFirst == 1) { 
+		System.out.println("Error, please enter two or more digits. ");
+	}
+
 	
 	previousSum = (firstSplit.indexOf('0') + secondSplit.indexOf('0'));
 	
-	if(lengthFirst == lengthSecond) { //first test
+	if(lengthFirst == lengthSecond) {
+			
 		while (a < firstSplit.length()){
 			firstSum = firstSplit.indexOf('a') + secondSplit.indexOf('a');
 			if (firstSum != previousSum) {
@@ -65,8 +70,10 @@ public static void main (String [] args) { //creating main method
 				a = a + 1; //loops again
 			}
 			else {
-				System.out.print("Length of input numbers do not match.");
+				System.out.println("Length of input numbers do not match.");
+				
 			}
+		
 			
 		
 		}
