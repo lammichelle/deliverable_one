@@ -11,20 +11,15 @@ public static void main (String [] args) { //creating main method
 	String secondString;
 	int lengthFirst;
 	int lengthSecond;
-	String firstSplit;
-	String secondSplit;
-	int i;
-	int j;
-	int a;
 	int previousSum;
-	int firstSum;
+	int nextSum;
 	
 
 	//first input
 	System.out.println("Enter first number: " );
 		firstNum = scnr.nextInt();
 		firstString = "" + firstNum;
-		lengthFirst = firstString.length();
+		lengthFirst = firstString.length(); //finding the length of string
 	
 	//second input
 	System.out.println("Enter second number: " );
@@ -32,59 +27,43 @@ public static void main (String [] args) { //creating main method
 		secondString = "" + secondNum;
 		lengthSecond = secondString.length(); //finding the length of string
 		
-		i = 0; 
-		
-		a = 1; //1 is the location of the string
-		
-		firstSplit = firstString.valueOf(firstNum);	//to split the string into individual characters		
-	for (i=0; i < firstString.length(); ++i) {
-	}
-		
-		secondSplit = secondString.valueOf(secondNum);
-	for (j=0; j < secondString.length(); ++j) {
-		
-	}
+	if(lengthFirst != lengthSecond) { 
+			System.out.println("Length of input numbers do not match.");
+			return;
+		}
 	
 	if (lengthFirst == 1) { 
-		System.out.println("Error, please enter two or more digits. ");
-	}
-
-	
-	previousSum = (firstSplit.indexOf('0') + secondSplit.indexOf('0'));
-	
-	if(lengthFirst == lengthSecond) {
-			
-		while (a < firstSplit.length()){
-			firstSum = firstSplit.indexOf('a') + secondSplit.indexOf('a');
-			if (firstSum != previousSum) {
-			break; //can stop immediately and Print False
+			System.out.println("Error, please enter two or more digits. "); //need at least two digits to compare
+			return;
 		}
-			
-			if (firstSum != previousSum) {	
+		
+	char prevDigit;
+	char nextDigit;
+	int a;
+	int b;
+	
+	for (int i = 0; i + 1 < firstString.length(); ++i) { //loop until the second to last digit
+		prevDigit = firstString.charAt(i); //take initial digit in character format
+		a = Character.getNumericValue(prevDigit); //convert character to int
+		nextDigit = secondString.charAt(i);
+		b = Character.getNumericValue(nextDigit); 
+		previousSum = a + b; //initial sum
+		
+		prevDigit = firstString.charAt(i + 1); //take next digit in string in character format
+		a = Character.getNumericValue(prevDigit);
+		nextDigit = secondString.charAt(i + 1);
+		b = Character.getNumericValue(nextDigit);
+		nextSum = a + b;
+		
+		if (previousSum != nextSum) {
 			System.out.println("False");
+			return;
 		}
-			
-			
-			else if (firstSum == previousSum) {
-				System.out.println("True");
-				a = a + 1; //loops again
-			}
-			else {
-				System.out.println("Length of input numbers do not match.");
-				
-			}
-		
-			
-		
-		}
-		}
+	}
 	
-	
+	System.out.println("True");
+	return;
 	
 	
 }
-	
-	
-	
-	
 }
