@@ -45,11 +45,8 @@ public class lab2attempt3 {
 	    }
 	 
 	    //printing the output
-	    System.out.print("The difference between dates measured: ");
-	    System.out.print(diff.getYears() + " years, "); //retrieving value of years using getYear method 
-	    System.out.print(diff.getMonths() + " months, ");
-	    System.out.println(diff.getDays() + " days");
-	    
+	    System.out.print("The difference between dates measured: " +diff.getYears() + " years, "+ diff.getMonths() + " months, " + diff.getDays() + " days.");
+	     //retrieving value of years, months,days by using getYears, getMonths, getDays method 
 		}
 }
 
