@@ -1,6 +1,8 @@
 package LabAttempt;
 
-import java.util.Scanner;
+import java.util.Scanner; 
+import java.time.*;
+
 
 public class Lab2 {
 public static void main (String [] args) { // creating main method
