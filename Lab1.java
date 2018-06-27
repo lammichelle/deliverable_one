@@ -3,6 +3,11 @@ package LabAttempt;
 import java.util.Scanner;
 
 public class Lab1 {
+	// LAB 1 PART 1 
+	// AUTHOR : MICHELLE LAM
+	// ABOUT THE PROGRAM: THIS PROGRAM WILL CHECK IF CORRESPONDING PLACES IN 2 NUMBERS SUMS TO THE SAME TOTAL
+		
+	
 public static void main (String [] args) { //creating main method
 	Scanner scnr = new Scanner(System.in); //creating scanner object
 	int firstNum;
@@ -27,7 +32,7 @@ public static void main (String [] args) { //creating main method
 		secondString = "" + secondNum;
 		lengthSecond = secondString.length(); //finding the length of string
 		
-	if(lengthFirst != lengthSecond) { 
+	if(lengthFirst != lengthSecond) { //making sure that two inputs are the same equal number of digits
 			System.out.println("Length of input numbers do not match.");
 			return;
 		}
